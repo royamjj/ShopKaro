@@ -9,11 +9,8 @@ export function HomeProducts() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-
-    console.log('effect')
     async function fetchProducts(){
       const {data} = await axios.get('/api/products/')
-      console.log(data);
       setProducts(data);
     }
     fetchProducts();

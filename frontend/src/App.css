@@ -2,11 +2,9 @@
   box-sizing: border-box;
   border: 0;
   margin: 0;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
+  font-family:Arial, Helvetica, sans-serif;
+  }
 body {
-  /* background: linear-gradient(to top, rgb(45, 204, 45), rgb(9, 90, 9)); */
   overflow-x: hidden;
 }
 .header {
@@ -84,7 +82,7 @@ a {
   padding: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 900;
   border-radius: 5px;
   transition: all 0.4s;
 }
@@ -153,6 +151,9 @@ main {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+.various-products h1{
+  margin-bottom: 50px;
 }
 .various-container {
   display: grid;
