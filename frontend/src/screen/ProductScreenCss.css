@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  .product-container {
+    margin: 10%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(196, 196, 196, 0.363);
+  }
+  .product-container img {
+    height: 300px;
+    width: auto;
+    background-position: center;
+    background-size: cover;
+    padding: 10px;
+  }
+  .product-items{
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+  }
+  .product-details{
+      display: grid;
+      grid-template-columns: auto auto;
+      text-align: left;
+      grid-gap: 1.5rem;
+  }
+  .detail-heading{
+      font-weight: 900;
+  }
+  .btn{
+      margin: 10px 0px;
+  }
+  .btn-active{
+      background-color: rgba(255, 0, 0, 0.747);
+      cursor: pointer;
+  }
+  .btn-active:hover{
+      transform: scale(1.05);
+      transition: all 0.2s linear;
+  }
+  .btn-inactive{
+      background: none;
+      background-color: rgb(167, 161, 161);
+      cursor: not-allowed;
+  }
+  .btn-active:hover i{
+      transform: rotate(-45deg) scale(1.2);
+      transition: all 0.2s ease-in-out;
+  } 
+  @media all and (max-width: 1000px){
+      .product-container{
+          flex-direction: column;
+          margin: auto;
+          justify-content: center;
+          align-items: center;
+          max-width: 80vw;
+          padding-top: 50px;
+      }
+      .product-container img{
+          padding-top: 50px;
+      }
+      .product-details{
+          justify-content: center;
+      }
+      .product-items{
+          width: 100%;
+          padding: 10px;
+      }
+      h1{
+          font-size: 1.2rem;
+      }
+      .product-container div{
+          font-size: 0.9rem;
+      }
+      h2{
+          font-size: 0.9rem;
+      }
+  }
+  
+  @media all and (max-width:600px){
+      .product-details{
+          grid-template-columns: 30% 70%;
+          padding: 10px;
+      }
+      .product-container{
+          display: flex;
+          width: 100vw;
+          padding: 10px;
+          align-items: center;
+          margin-top: 50px;
+      }
+      .product-container img{
+          padding-top: 50px;
+          width: 70%;
+          height: auto;
+      }
+      h1{
+          font-size: 1rem;
+      }
+      .product-container div{
+          font-size: 0.8rem;
+      }
+  }
