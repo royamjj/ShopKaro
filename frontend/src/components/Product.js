@@ -16,7 +16,7 @@ function Product({ product }) {
       </Link>
       <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
         <StarRatings
-          rating={product.rating}
+          rating={parseFloat(product.rating)}
           numberOfStars={5}
           isSelectable={false}
           isAggregateRating={true}
