@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Route component={HomeScreen} path="/" exact />
-      <Route component={ProductScreen} path="/product/:id"/>
+      <Route component={ProductScreen} path="/products/:id"/>
     </Router>
   );
 }

@@ -1,9 +1,25 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Fragment } from "react";
 import "../App.css";
 import Product from "./Product";
-import products from "../products";
+import axios from 'axios';
+
+
 export function HomeProducts() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+
+    console.log('effect')
+    async function fetchProducts(){
+      const {data} = await axios.get('/api/products/')
+      console.log(data);
+      setProducts(data);
+    }
+    fetchProducts();
+
+  }, [])
+
   return (
     <Fragment>
       <main>

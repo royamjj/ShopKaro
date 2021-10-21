@@ -1,14 +1,27 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Header } from "../components/Header";
 import { Fragment } from "react";
-import products from "../products";
+
 import StarRatings from "react-star-ratings";
 import { useParams } from "react-router";
 import "./ProductScreenCss.css";
+import axios from 'axios';
 
-function ProductScreen({ match }) {
+
+function ProductScreen() {
   const { id } = useParams();
-  const product = products.find((p) => p._id === id);
+
+  const [product, setProduct] = useState([]);
+  useEffect(() => {
+    async function fetchProduct(){
+      const {data} = await axios.get(`/api/products/${id}`);
+      console.log(data);
+      setProduct(data);
+    }
+    fetchProduct();
+
+  }, [])
+  
 
   return (
     <Fragment>

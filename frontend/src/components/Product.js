@@ -5,7 +5,7 @@ import StarRatings from "react-star-ratings";
 function Product({ product }) {
   return (
     <Fragment>
-      <Link to={`/product/${product._id}`}>
+      <Link to={`/products/${product._id}`}>
         <img className="various-image" src={product.image} alt="image"/>
         <div className="various-info">{product.name}</div>
         <div>
