@@ -123,7 +123,7 @@ main {
   flex-direction: column;
 }
 .heading h1 {
-  font-weight: 700;
+  font-weight: 900;
 }
 .top-product {
   position: relative;
@@ -134,14 +134,14 @@ main {
   align-items: center;
   width: 100vw;
 }
-/* .top-product-img {
-  background-image: url("photos/airpods.jpg");
+.top-product-img {
+  background-image: url("airpods.jpg");
   width: 50vw;
   height: 15rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-} */
+}
 .top-product-info {
   font-size: 2rem;
 }
@@ -221,7 +221,7 @@ a:hover{
   .burger {
     display: block;
     margin-left: 10px;
-    padding-top: 5px;
+    padding-top: 10px;
   }
   #logo {
     font-size: 2rem;
