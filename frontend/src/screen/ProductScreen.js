@@ -2,39 +2,32 @@ import React, { useEffect, useState } from "react";
 import { Header } from "../components/Header";
 import { Fragment } from "react";
 
-import StarRatings from "react-star-ratings";
+import ReactStars from "react-rating-stars-component";
 import { useParams } from "react-router";
 import "./ProductScreenCss.css";
-import axios from "axios";
 import Loading from "../components/Loading";
 
-function ProductScreen({ match }) {
+import { useDispatch, useSelector } from "react-redux";
+import { listProductDetails } from "../actions/productActions";
+
+function ProductScreen() {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const dispatchCall = useDispatch();
+  const productDetails = useSelector((state) => state.productDetails);
+  const { loading, error, product } = productDetails;
 
   useEffect(() => {
-    async function fetchProduct(){
-      try{
-        const {data} = await axios.get(`/api/products/${id}`).then(res => {
-            setProduct(res.data);
-            setTimeout(() => {
-              setLoading(false);
-          }, 500);
-          
-        })
-      }catch (e){
-        console.log(e);
-      }
-    }
-    fetchProduct();
-  }, [])
-
+    dispatchCall(listProductDetails(id));
+  }, [dispatchCall]);
   return (
     <Fragment>
       <Header />
       {loading ? (
-        <Loading />
+        <h2>
+          <Loading />
+        </h2>
+      ) : error ? (
+        <h3>{error}</h3>
       ) : (
         <div className="product-container">
           <img src={product.image} />
@@ -53,17 +46,18 @@ function ProductScreen({ match }) {
                   justifyContent: "start",
                 }}
               >
-                <StarRatings
-                  rating={parseFloat(product.rating)}
-                  numberOfStars={5}
-                  isSelectable={false}
-                  isAggregateRating={true}
-                  starRatedColor="rgb(255, 0, 0)"
-                  starDimension="20px"
-                  starSpacing="2px"
-                />
+                <ReactStars
+          size={20}
+          count={5}
+          value={parseFloat(product.rating)}
+          starCount={5}
+          edit={false}
+          isHalf={true}
+          activeColor="rgb(255, 0, 0)"
+        />
                 &#160;
-                {product.numReviews} reviews
+                <span style={{paddingTop:"5px",}}>{product.numReviews} reviews</span>
+                
               </div>
 
               <div className="detail-heading">Price</div>

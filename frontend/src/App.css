@@ -124,6 +124,7 @@ main {
 }
 .heading h1 {
   font-weight: 900;
+  text-shadow: 2px 3px 3px rgba(204, 0, 119, 0.466);
 }
 .top-product {
   position: relative;
@@ -145,7 +146,6 @@ main {
 .top-product-info {
   font-size: 2rem;
 }
-
 .various-products {
   margin-top: 70px;
   display: flex;
@@ -154,6 +154,7 @@ main {
 }
 .various-products h1{
   margin-bottom: 50px;
+  text-shadow: 2px 3px 3px rgba(204, 0, 119, 0.466);
 }
 .various-container {
   display: grid;
@@ -206,6 +207,7 @@ a:hover{
 .cred:hover{
   color:red;
 }
+
 .cred:hover i{
   transform: rotate(-45deg);
   transition: all 0.1s linear;
@@ -240,10 +242,17 @@ a:hover{
     align-items: center;
     font-size: 1rem;
     transform: translateX(100%);
+    justify-content: space-around;
     transition: all 0.2s ease-in-out;
   }
   .header-info-active{
     transform: translateX(0px) ; 
+  }
+  .cred{
+    margin: 0px 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
   }
   .top-product {
     flex-direction: column;
@@ -259,7 +268,7 @@ a:hover{
     margin-top: 10px;
   }
   .top-product-img {
-    width: 100vw;
+    width: 70vw;
   }
   .buy-now {
     margin-top: 10px;
@@ -298,6 +307,12 @@ a:hover{
   .header-info-active{
     transform: translateX(0px) ; 
   }
+  .cred{
+    margin: 0px 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
   .top-product {
     flex-direction: column;
     background-color: rgb(255, 255, 255);
@@ -312,7 +327,7 @@ a:hover{
     margin-top: 10px;
   }
   .top-product-img {
-    width: 100vw;
+    width: 70vw;
   }
   .buy-now {
     margin-top: 10px;
@@ -343,7 +358,7 @@ a:hover{
     margin-top: 10px;
   }
   .top-product-img {
-    width: 100vw;
+    width: 70vw;
   }
   .buy-now {
     margin-top: 10px;

@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { listProducts } from "../actions/productActions";
 
+
+
 export function HomeProducts() {
   const dispatchCall = useDispatch();
 

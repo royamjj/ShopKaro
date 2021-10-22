@@ -1,12 +1,12 @@
 import React from "react";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import StarRatings from "react-star-ratings";
+import ReactStars from "react-rating-stars-component";
 function Product({ product }) {
   return (
     <Fragment>
       <Link to={`/products/${product._id}`}>
-        <img className="various-image" src={product.image} alt="image"/>
+        <img className="various-image" src={product.image} alt="image" />
         <div className="various-info">{product.name}</div>
         <div>
           <h3>
@@ -14,17 +14,25 @@ function Product({ product }) {
           </h3>
         </div>
       </Link>
-      <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
-        <StarRatings
-          rating={parseFloat(product.rating)}
-          numberOfStars={5}
-          isSelectable={false}
-          isAggregateRating={true}
-          starRatedColor="rgb(255, 0, 0)"
-          starDimension="20px"
-          starSpacing="2px"
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign:"center",
+        }}
+      >
+        <ReactStars
+          size={25}
+          count={5}
+          value={parseFloat(product.rating)}
+          starCount={5}
+          edit={false}
+          isHalf={true}
+          activeColor="rgb(255, 0, 0)"
         />
-        {product.numReviews} reviews
+        <span style={{paddingTop:"5px",}}>{product.numReviews} reviews</span>
+        
       </div>
     </Fragment>
   );
