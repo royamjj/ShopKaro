@@ -31,10 +31,10 @@ export function Header() {
         </div>
         <div className="header-user">
           <Link className="cred" to="/login" style={{ textDecoration: 'none'}}>
-            <i className="fas fa-shopping-cart"></i>&#160;Login
+          <i className="fas fa-user"></i>&#160;Login
           </Link>
           <Link className="cred" to="/cart" style={{ textDecoration: 'none' }}>
-            <i className="fas fa-user"></i>&#160;Cart
+          <i className="fas fa-shopping-cart"></i>&#160;Cart
           </Link>
         </div>
       </div>

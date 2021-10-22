@@ -7,19 +7,15 @@ import Loading from './Loading';
 
 export function HomeProducts() {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+
     async function fetchProducts(){
       const {data} = await axios.get('/api/products/')
       setProducts(data);
     }
     fetchProducts();
-    setTimeout(() => {
-      
-    }, 500);
-    setLoading(false)
   }, [])
 
   return (

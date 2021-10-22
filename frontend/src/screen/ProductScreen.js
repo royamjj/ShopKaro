@@ -17,10 +17,11 @@ function ProductScreen({ match }) {
     async function fetchProduct(){
       try{
         const {data} = await axios.get(`/api/products/${id}`).then(res => {
-          setProduct(res.data);
-          setTimeout(() => {
-            setLoading(false);
+            setProduct(res.data);
+            setTimeout(() => {
+              setLoading(false);
           }, 500);
+          
         })
       }catch (e){
         console.log(e);
