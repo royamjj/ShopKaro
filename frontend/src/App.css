@@ -16,7 +16,7 @@ body {
   top: 0%;
   position: fixed;
   width: 100vw;
-  z-index: 1;
+  z-index: 3;
 }
 .header-logo {
   font-size: 2.7rem;
@@ -114,6 +114,73 @@ a:hover {
 }
 .toggle .line3 {
   transform: rotate(-45deg) translateY(-15px);
+}
+
+.page-logo {
+  position: relative;
+  background: linear-gradient(to right, #c94b4b, #4b134f);
+  width: 100vw;
+  height: 40vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  font-size: 4rem;
+  font-weight: 700;
+  opacity: 0;
+  animation: name 0.8s ease-out;
+  animation-fill-mode: forwards; 
+}
+.page-logo:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform-origin: top right;
+  transform: skewY(-4deg);
+}
+.text {
+  position: absolute;
+  background-image: linear-gradient(
+    to right,
+    rgb(158, 56, 226) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.829);
+  border-radius: 4px;
+  padding-bottom: 5px;
+  animation: text 0.5s ease-out 1s;
+  opacity: 0;
+  animation-fill-mode: forwards; 
+}
+
+@keyframes name{
+  from{
+    transform: translateX(100%);
+  }
+  to{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes text{
+  from{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
 main {
   display: flex;
@@ -249,7 +316,7 @@ a:hover{
     transform: translateX(0px) ; 
   }
   .cred{
-    margin: 0px 15px;
+    margin: 10px 15px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -272,6 +339,10 @@ a:hover{
   }
   .buy-now {
     margin-top: 10px;
+  }
+  .page-logo{
+    margin-top: 4rem;
+    font-size: 3rem;
   }
 }
 
@@ -334,6 +405,10 @@ a:hover{
   }
   .various-container {
     grid-template-columns: auto auto;
+  }
+  .page-logo{
+    margin-top: 3rem;
+    font-size: 3.5rem;
   }
 }
 
