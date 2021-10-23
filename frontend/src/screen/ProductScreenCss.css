@@ -1,11 +1,4 @@
-* {
-    box-sizing: border-box;
-    border: 0;
-    margin: 0;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  }
-  .product-container {
+.product-container {
     margin: 10%;
     display: flex;
     justify-content: space-around;
@@ -51,6 +44,7 @@
       background: none;
       background-color: rgb(167, 161, 161);
       cursor: not-allowed;
+      pointer-events: none;
   }
   .btn-active:hover i{
       transform: rotate(-45deg) scale(1.2);

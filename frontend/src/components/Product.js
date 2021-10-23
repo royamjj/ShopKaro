@@ -1,7 +1,8 @@
 import React from "react";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import ReactStars from "react-rating-stars-component";
+import ProductScreen from "../screen/ProductScreen";
+import StarComponent from "./StarComponent";
 function Product({ product }) {
   return (
     <Fragment>
@@ -22,15 +23,7 @@ function Product({ product }) {
           textAlign:"center",
         }}
       >
-        <ReactStars
-          size={25}
-          count={5}
-          value={parseFloat(product.rating)}
-          starCount={5}
-          edit={false}
-          isHalf={true}
-          activeColor="rgb(255, 0, 0)"
-        />
+        <StarComponent props={{size: 20, rating:product.rating, isEditable:false}}/>
         <span style={{paddingTop:"5px",}}>{product.numReviews} reviews</span>
         
       </div>

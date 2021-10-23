@@ -1,0 +1,76 @@
+.validater-div{
+    background-color: rgb(253, 72, 72);
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8vh;
+    font-weight: 700;
+    position: fixed;
+    transform: translateY(-100%);
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 10px;
+}
+.enter{
+    animation: entry 5s;
+}
+@keyframes entry{
+    0%, 100%{
+        transform: translateY(-100%);
+    }
+    10%,90%{
+        top: 12%;
+        transform: translateY(0%);
+    }
+}
+@media only screen and (max-width:600px){
+    .validater-div{
+        font-size: 0.6rem;
+        width: 80vw;
+    }
+    @keyframes entry{
+        0%, 100%{
+            transform: translateY(-100%);
+        }
+        10%,90%{
+            top: 11%;
+            transform: translateY(0%);
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .validater-div{
+        font-size: 0.7rem;
+        width: 40vw;
+        height: 4vh;
+    }
+    @keyframes entry{
+        0%, 100%{
+            transform: translateY(-100%);
+        }
+        10%,90%{
+            top: 7%;
+            transform: translateY(0%);
+        }
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1250px){
+    .validater-div{
+        font-size: 1rem;
+        width: 40vw;
+        height: 4vh;
+    }
+    @keyframes entry{
+        0%, 100%{
+            transform: translateY(-100%);
+        }
+        10%,90%{
+            top: 7%;
+            transform: translateY(0%);
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.cart-button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.cart-button{
+    font-size: 1.5rem;
+    padding: 0px 5px;
+    width: 30px;
+}
+.dec{
+    background-color: rgba(255, 0, 0, 0.308);
+}
+.dec:hover{
+    background-color: rgba(255, 0, 0, 0.508);
+}
+.dec:active{
+    background-color: red;
+}
+.inc{
+    background-color: rgba(44, 255, 2, 0.308);
+}
+.inc:hover{
+    background-color: rgba(44, 255, 2, 0.508);
+}
+.inc:active{
+    background-color: green;
+}
+.item-value{
+    width:30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
