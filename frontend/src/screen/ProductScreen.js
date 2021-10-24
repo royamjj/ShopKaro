@@ -8,46 +8,82 @@ import "../components/CartButtonCss.css";
 import { useDispatch, useSelector } from "react-redux";
 import { listProductDetails } from "../actions/productActions";
 import StarComponent from "../components/StarComponent";
-import '../components/ValidatorCss.css';
+import "../components/ValidatorCss.css";
+import Validator from "../components/Validator";
 
 function ProductScreen() {
   const { id } = useParams();
   const dispatchCall = useDispatch();
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
-  
+
   useEffect(() => {
     dispatchCall(listProductDetails(id));
   }, [dispatchCall]);
 
-
   const [value, setValue] = useState(0);
   function decrease() {
-    if (value > 0){
+    if (value > 0) {
       setValue((curr) => {
         return curr - 1;
-      })};
-  }
-  function increase() {
-      if (value < 50){
-      setValue((curr) => {
-        return curr + 1;
-      })};
-  }
-  function addToCartHandler(){
-    if (value === 0){
-      setValid(false)
-      setTimeout(() => {
-        setValid(true)
-      }, 5000);
+      });
     }
   }
-  const [isValid, setValid] = useState(true)
+  function increase() {
+    if (value < product.countInStock) {
+      setValue((curr) => {
+        return curr + 1;
+      });
+    }
+  }
+  function addToCartHandler() {
+    if (value === 0) {
+      setValid(false);
+      setTimeout(() => {
+        setValid(true);
+      }, 5000);
+    } else {
+      setcurrentItems(value);
+      setAddToCart(true);
+      setValue(0);
+      setTimeout(() => {
+        
+        setAddToCart(false);
+        setcurrentItems(0);
+      }, 5000);
 
+    }
+  }
+  const [isValid, setValid] = useState(true);
+  const [addedToCart, setAddToCart] = useState(false);
+  const [currentItems, setcurrentItems] = useState(0);
   return (
     <Fragment>
       <Header />
-      <div className={!isValid ? "validater-div enter": "validater-div"}>Please select the quantity more than 0!!</div>
+      {!isValid ? (
+        <Validator
+          props={{
+            message: "Please select the quantity more than 0!",
+            backcolor: "red",
+            color: "black",
+            className: "validater-div enter",
+          }}
+        />
+      ) : (
+        <Validator props={{ className: "validater-div" }} />
+      )}
+      {addedToCart ? (
+        <Validator
+          props={{
+            message: `Added ${currentItems} items to your cart`,
+            backcolor: "green",
+            color: "white",
+            className: "validater-div enter",
+          }}
+        />
+      ) : (
+        <Validator props={{ className: "validater-div" }} />
+      )}
       {loading ? (
         <h2>
           <Loading />
@@ -72,7 +108,13 @@ function ProductScreen() {
                   justifyContent: "start",
                 }}
               >
-                <StarComponent props={{size: 20, rating:product.rating, isEditable:false}}/>
+                <StarComponent
+                  props={{
+                    size: 20,
+                    rating: product.rating,
+                    isEditable: false,
+                  }}
+                />
                 &#160;
                 <span style={{ paddingTop: "5px" }}>
                   {product.numReviews} reviews
@@ -101,24 +143,26 @@ function ProductScreen() {
             <div>
               {product.countInStock > 0 ? (
                 <div className="cart-button-container">
-                <button className="cart-button dec" onClick={decrease}>
-                  -
-                </button>
-                <div className="item-value">{value}</div>
-                <button className="cart-button inc" onClick={increase}>
-                  +
-                </button>
-              </div>
-              ) :<span></span>}
+                  <button className="cart-button dec" onClick={decrease}>
+                    -
+                  </button>
+                  <div className="item-value">{value}</div>
+                  <button className="cart-button inc" onClick={increase}>
+                    +
+                  </button>
+                </div>
+              ) : (
+                <span></span>
+              )}
               <button
-              onClick={addToCartHandler}
+                onClick={addToCartHandler}
                 className={
                   product.countInStock > 0
                     ? "btn btn-active"
                     : "btn btn-inactive"
                 }
               >
-                <i className="fas fa-shopping-cart" ></i>&#160;Add to Cart
+                <i className="fas fa-shopping-cart"></i>&#160;Add to Cart
               </button>
             </div>
           </div>
@@ -126,6 +170,5 @@ function ProductScreen() {
       )}
     </Fragment>
   );
-
 }
 export default ProductScreen;

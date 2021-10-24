@@ -7,6 +7,7 @@
 }
 body {
   overflow-x: hidden;
+  background-color: #3E2C41;
 }
 .header {
   background: rgba(0, 0, 0, 0.945);
@@ -191,13 +192,14 @@ main {
   flex-direction: column;
 }
 .heading h1 {
+  color: white;
   font-weight: 900;
   text-shadow: 2px 3px 3px rgba(204, 0, 119, 0.466);
 }
 .top-product {
   position: relative;
   margin-top: 50px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,13 +207,17 @@ main {
 }
 .top-product-img {
   background-image: url("airpods.jpg");
-  width: 50vw;
-  height: 15rem;
+  width: 40vw;
+  border-radius: 10px;
+  height: 18rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-right: 20px;
 }
 .top-product-info {
+  
+  color: white;
   font-size: 2rem;
 }
 .various-products {
@@ -221,12 +227,14 @@ main {
   text-align: center;
 }
 .various-products h1{
+  color: white;
   margin-bottom: 50px;
   text-shadow: 2px 3px 3px rgba(204, 0, 119, 0.466);
 }
 .various-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  margin: 0px 10px 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 1rem;
 }
 
@@ -234,8 +242,8 @@ main {
 .right-symbol {
   font-size: 4rem;
   position: absolute;
-  background-color: rgb(235, 235, 235);
   cursor: pointer;
+  color: white;
 }
 .left-symbol {
   margin-left: 10px;
@@ -249,10 +257,15 @@ main {
 }
 .left-symbol:hover,
 .right-symbol:hover {
-  background-color: rgb(209, 206, 206);
+  background-color: rgba(209, 206, 206, 0.637);
+}
+.left-symbol:active,
+.right-symbol:active {
+  background-color: rgb(255, 255, 255);
 }
 .each-various-product {
-  background-color: rgba(231, 231, 231, 0.692);
+  background-color: rgba(255, 255, 255, 0.822);
+  border-radius: 10px;
   padding: 10px;
 }
 .each-various-product > div{
@@ -283,7 +296,8 @@ a:hover{
 
 @media only screen and (max-width: 600px) {
   .various-container {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
+    width: 80vw;
   }
   html {
     overflow-x: hidden;
@@ -324,7 +338,6 @@ a:hover{
   }
   .top-product {
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
   }
   .top-product-info {
     display: flex;
@@ -336,7 +349,9 @@ a:hover{
     margin-top: 10px;
   }
   .top-product-img {
-    width: 70vw;
+    width: 60vw;
+    height: 30vh;
+    margin: 0px 0px 10px 0px;
   }
   .buy-now {
     margin-top: 10px;
@@ -347,7 +362,7 @@ a:hover{
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 800px) {
+@media only screen and (min-width: 600px) and (max-width: 850px) {
   html {
     overflow-x: auto;
   }
@@ -387,7 +402,6 @@ a:hover{
   }
   .top-product {
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
   }
   .top-product-info {
     display: flex;
@@ -395,17 +409,20 @@ a:hover{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-top: 10px;
   }
   .top-product-img {
     width: 70vw;
+    margin-bottom: 10px;
   }
   .buy-now {
+    font-size: 1rem;
     margin-top: 10px;
   }
   .various-container {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
+    margin: 0px 10px 50px;
   }
   .page-logo{
     margin-top: 3rem;
@@ -413,16 +430,16 @@ a:hover{
   }
 }
 
-@media only screen and (min-width: 800px) and (max-width: 1250px){
+@media only screen and (min-width: 850px) and (max-width: 1250px){
   .various-container {
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0px 10px 50px;
   }
   html {
     overflow-x: auto;
   }
   .top-product {
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
   }
   .top-product-info {
     display: flex;
@@ -430,11 +447,12 @@ a:hover{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1rem;
+    font-size: 2rem;
     margin-top: 10px;
   }
   .top-product-img {
-    width: 70vw;
+    width: 60vw;
+    margin: 10px 0px;
   }
   .buy-now {
     margin-top: 10px;
