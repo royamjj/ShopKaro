@@ -13,7 +13,8 @@
     left: 0;
     right: 0;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 0px 0px 7px 7px;
+    font-size: 1rem;
 }
 .enter{
     animation: entry 5s;
@@ -23,7 +24,7 @@
         transform: translateY(-100%);
     }
     10%,90%{
-        top: 12%;
+        top: 4rem;
         transform: translateY(0%);
     }
 }
@@ -38,23 +39,23 @@
             transform: translateY(-100%);
         }
         10%,90%{
-            top: 15%;
+            top: 4rem;
             transform: translateY(0%);
         }
     }
 }
 @media only screen and (min-width: 600px) and (max-width: 850px){
     .validater-div{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         width: 40vw;
-        height: 4vh;
+        height: 5vh;
     }
     @keyframes entry{
         0%, 100%{
             transform: translateY(-100%);
         }
         10%,90%{
-            top: 10%;
+            top: 3rem;
             transform: translateY(0%);
         }
     }
@@ -70,7 +71,7 @@
             transform: translateY(-100%);
         }
         10%,90%{
-            top: 15%;
+            top: 4rem;
             transform: translateY(0%);
         }
     }

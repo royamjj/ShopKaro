@@ -92,7 +92,7 @@ function ProductScreen() {
         <h3>{error}</h3>
       ) : (
         <div className="product-container">
-          <img src={product.image} />
+          <img src={product.image} alt="product show"/>
           <div className="product-items">
             <h1 style={{ margin: "20px" }}>{product.name}</h1>
 
