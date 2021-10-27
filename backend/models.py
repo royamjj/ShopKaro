@@ -77,3 +77,9 @@ class ShippingAddress(models.Model):
 
     def __str__(self):
         return self.address
+
+class Cart(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    product =  models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=False)
+    status = models.BooleanField(default=False)   #shipped, delivered

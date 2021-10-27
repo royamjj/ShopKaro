@@ -2,11 +2,13 @@ from django.shortcuts import render
 
 from django.http import JsonResponse
 from .models import *
-
+from rest_framework.decorators import parser_classes
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import ProductSerializer
+from .serializers import ProductSerializer,CartRequestSerializer
+from rest_framework.parsers import JSONParser
 
+from backend import serializers
 def index(request):
     return render(request, 'index.html')
 
@@ -33,4 +35,8 @@ def getProduct(request, pk):
     serailizer = ProductSerializer(product, many=False)
     return Response(serailizer.data)
 
-
+@api_view(["POST"])
+def getRequest(request, format=None):
+    serializer = CartRequestSerializer(request.data)
+    print(serializer['product'].value)
+    return Response(serializer.data)

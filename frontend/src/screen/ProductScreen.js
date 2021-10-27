@@ -10,6 +10,7 @@ import { listProductDetails } from "../actions/productActions";
 import StarComponent from "../components/StarComponent";
 import "../components/ValidatorCss.css";
 import Validator from "../components/Validator";
+import axios from "axios";
 
 function ProductScreen() {
   const { id } = useParams();
@@ -43,6 +44,7 @@ function ProductScreen() {
         setValid(true);
       }, 5000);
     } else {
+      postRequest();
       setcurrentItems(value);
       setAddToCart(true);
       setValue(0);
@@ -54,6 +56,20 @@ function ProductScreen() {
 
     }
   }
+
+  const postRequest = async () => {
+    const data = {
+      "product":"apple",
+      "quantity": "5",
+    }
+    try{
+      const response = await axios.post('/api/getRequest/', data);
+      console.log(response.data);
+    }catch (e){
+      console.log(e)
+    }
+  }
+
   const [isValid, setValid] = useState(true);
   const [addedToCart, setAddToCart] = useState(false);
   const [currentItems, setcurrentItems] = useState(0);

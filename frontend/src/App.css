@@ -264,9 +264,11 @@ main {
   background-color: rgb(255, 255, 255);
 }
 .each-various-product {
-  background-color: rgba(255, 255, 255, 0.822);
+  background-color: #ffffffd7;
   border-radius: 10px;
   padding: 10px;
+  color: black;
+  font-weight: 900;
 }
 .each-various-product > div{
   text-align: center;
@@ -287,14 +289,16 @@ a:hover{
 }
 .cred:hover{
   color:red;
+  
 }
-
+i{
+  transition: all 0.150s linear;
+}
 .cred:hover i{
   transform: rotate(-45deg);
-  transition: all 0.1s linear;
 }
 
-@media only screen and (max-width: 600px) {
+@media all and (max-width: 600px) {
   .various-container {
     grid-template-columns: 1fr;
     width: 80vw;
@@ -362,7 +366,7 @@ a:hover{
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 850px) {
+@media all and (min-width: 600px) and (max-width: 850px) {
   html {
     overflow-x: auto;
   }
@@ -430,7 +434,7 @@ a:hover{
   }
 }
 
-@media only screen and (min-width: 850px) and (max-width: 1250px){
+@media all and (min-width: 850px) and (max-width: 1250px){
   .various-container {
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0px 10px 50px;
