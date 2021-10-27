@@ -60,6 +60,7 @@ a {
   border: none;
   border-radius: 5px;
   margin: 10px;
+  transition: all 0.1s linear;
 }
 .search-input:focus {
   outline: none;
@@ -86,7 +87,7 @@ a {
   cursor: pointer;
   font-weight: 900;
   border-radius: 5px;
-  transition: all 0.4s;
+  transition: all 0.5s;
 }
 .btn:hover {
   background-position: left;
@@ -339,6 +340,7 @@ i{
     width: 100%;
     display: flex;
     flex-direction: row;
+    padding-bottom:10px;
   }
   .top-product {
     flex-direction: column;
@@ -403,6 +405,7 @@ i{
     width: 100%;
     display: flex;
     flex-direction: row;
+    padding-bottom: 10px;
   }
   .top-product {
     flex-direction: column;
