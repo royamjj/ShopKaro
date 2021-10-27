@@ -38,6 +38,10 @@
 .cart-checkout{
     padding: 10px;
 }
+.cart-items > h2{
+    color: white;
+    text-shadow: 2px 3px 3px rgb(204 0 119 / 47%);
+}
 /* @media all and (min-width: 850px) and (max-width: 1250px){
     
 } */

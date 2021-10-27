@@ -1,16 +1,20 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Header } from "../components/Header";
 import "./CartScreenCss.css";
 import CartItemComponent from "../components/CartItemComponent";
 import products from "../products";
 
 export default function CartScreen() {
-  const cartItems = products;
+  const cartItems =  products; 
+  
   let totalPrice = 0;
-  for (let i = 0; i < products.length; i++) {
-    totalPrice += products[i].price * products[i].countInStock;
+  if (cartItems.length > 0){
+    for (let i = 0; i < cartItems.length; i++) {
+      totalPrice += cartItems[i].price * cartItems[i].countInStock;
+    }
   }
-  let num = totalPrice.toFixed(2);
+  // const [buttonState, setButtonState] = useState(cartItems.length > 0 ? true : false);
+  let num = totalPrice.toFixed(2); 
   return (
     <Fragment>
       <Header />
@@ -19,18 +23,20 @@ export default function CartScreen() {
       </div>
       <div className="cart-container">
         <div className="cart-items">
-          {cartItems.map((p) => (
-            <CartItemComponent
-              props={{
-                image: p.image,
-                name: p.name,
-                total: p.price * p.countInStock,
-                quantity: p.countInStock,
-                _id: p._id,
-              }}
-              key={p._id}
-            />
-          ))}
+          {cartItems.length === 0 
+          ? <h2>Your shopping cart is empty! Start shopping now!!</h2>
+          : cartItems.map(p => {
+            return(
+            <CartItemComponent props={{
+              image: p.image,
+              name: p.name,
+              total: p.price * p.countInStock,
+              quantity: p.countInStock,
+              _id: p._id,
+            }}
+            key={p._id} />)
+          })
+        }
         </div>
         <div className="cart-total">
           <div>
@@ -38,7 +44,7 @@ export default function CartScreen() {
             <p>Rs {num}</p>
           </div>
           <div className="cart-checkout">
-        <button className="btn">PROCEED TO CHECKOUT</button>
+        <button className={totalPrice > 0 ? "btn" : "btn btn-inactive"}>PROCEED TO CHECKOUT</button>
       </div>
         </div>
       </div>
