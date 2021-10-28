@@ -20,7 +20,7 @@ function ProductScreen() {
 
   useEffect(() => {
     dispatchCall(listProductDetails(id));
-  }, [dispatchCall]);
+  }, [dispatchCall, id]);
 
   const [value, setValue] = useState(0);
   function decrease() {

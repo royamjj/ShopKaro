@@ -1,26 +1,25 @@
 from django.shortcuts import render
-
 from django.http import JsonResponse
 from .models import *
-from rest_framework.decorators import parser_classes
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import ProductSerializer,CartRequestSerializer
-from rest_framework.parsers import JSONParser
+from .serializers import ProductSerializer,CartRequestSerializer, UserSerializer, MyTokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
 
-from backend import serializers
+
 def index(request):
     return render(request, 'index.html')
 
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
+
+
 @api_view(['GET'])
-def getRoutes(request):
-    routes = [
-        '/',
-        '/getRoutes',
-        '/login',
-        '/cart',
-    ]
-    return Response(routes)
+def getUserProfile(request):
+    user = request.user
+    serailizer = UserSerializer(user, many=False)
+    return Response(serailizer.data)
 
 
 @api_view(['GET'])

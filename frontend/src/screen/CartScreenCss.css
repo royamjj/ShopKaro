@@ -1,6 +1,8 @@
-
+html{
+    overflow:visible;
+}
 .cart-heading{
-    margin-top: 5rem;
+    margin: 7rem auto 3rem auto;
     color: white;
     font-weight: 900;
     display: flex;
@@ -8,7 +10,7 @@
     text-shadow: 2px 3px 3px rgb(204 0 119 / 47%);
 }
 .cart-container{
-    margin: 20px;
+    margin: 20px 50px;
     display: grid;
     grid-template-columns: 3fr 1fr;
     background-color: inherit;
@@ -50,6 +52,7 @@
         margin: 20px auto;
         width: 70%;
         height: 30vh;
+        padding-top: 1rem;
     }
 }
 @media all and (min-width: 600px) and (max-width: 850px){
@@ -70,6 +73,7 @@
 @media all and (min-width: 850px) and (max-width: 1250px){
     .cart-total h2{
         font-size: 1.1rem;
+        
     }
     p,.btn{
         font-size: 1rem !important ; 

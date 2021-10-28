@@ -1,5 +1,4 @@
 import React from "react";
-import products from "../products";
 import './CartProductCss.css';
 import '../App.css';
 import { Link } from "react-router-dom";

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { Header } from "../components/Header";
 import "./CartScreenCss.css";
 import CartItemComponent from "../components/CartItemComponent";
@@ -19,7 +19,7 @@ export default function CartScreen() {
     <Fragment>
       <Header />
       <div className="cart-heading">
-        <h1>Your Cart</h1>
+        <h1><i style={{fontSize:"3rem"}} className="fas fa-shopping-cart"></i>&#160;Your Cart</h1>
       </div>
       <div className="cart-container">
         <div className="cart-items">
@@ -44,7 +44,7 @@ export default function CartScreen() {
             <p>Rs {num}</p>
           </div>
           <div className="cart-checkout">
-        <button className={totalPrice > 0 ? "btn" : "btn btn-inactive"}>PROCEED TO CHECKOUT</button>
+        <button className={totalPrice > 0 ? "btn" : "btn btn-inactive"}><b>PROCEED TO CHECKOUT</b></button>
       </div>
         </div>
       </div>

@@ -53,7 +53,7 @@ i{
 a{
     padding: 0;
 }
-@media all and (max-width: 500px){
+@media all and (max-width: 600px){
     .cart-item-container{
         flex-direction: column;
     }
@@ -71,7 +71,7 @@ a{
         background-size: cover;
     }
 }
-@media all and (max-width: 600px){
+@media all and (max-width: 650px){
     .cart-item-details-all{
         font-size: 0.8rem;
     }
@@ -81,7 +81,7 @@ a{
         padding-right: 10px;
     }
 }
-@media all and (min-width: 600px) and (max-width: 850px){
+@media all and (min-width: 650px) and (max-width: 850px){
     .cart-item-details-all{
         font-size: 0.8rem;
     }
