@@ -241,10 +241,18 @@ main {
 
 .left-symbol,
 .right-symbol {
-  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
   position: absolute;
   cursor: pointer;
-  color: white;
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border-radius: 10%;
+  padding: 0px 2px 2px 2px;
 }
 .left-symbol {
   margin-left: 10px;
@@ -366,6 +374,9 @@ i{
     margin-top: 4rem;
     font-size: 3rem;
   }
+  .each-various-product{
+    padding: 5px;
+  }
 }
 
 @media all and (min-width: 600px) and (max-width: 850px) {
@@ -454,7 +465,7 @@ i{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
     margin-top: 10px;
   }
   .top-product-img {
@@ -466,6 +477,12 @@ i{
   }
   .header-user{
     font-size: 0.9rem;
+  }
+  .search .btn{
+    font-size: 0.8rem;
+  }
+  .search-input{
+    padding: 0.5rem;
   }
 }
 

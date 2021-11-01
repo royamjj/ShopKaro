@@ -44,7 +44,7 @@ export default function CartScreen() {
             <p>Rs {num}</p>
           </div>
           <div className="cart-checkout">
-        <button className={totalPrice > 0 ? "btn" : "btn btn-inactive"}><b>PROCEED TO CHECKOUT</b></button>
+        <button className={totalPrice > 0 ? "btn cart-btn" : "btn btn-inactive"}><b>PROCEED TO CHECKOUT</b></button>
       </div>
         </div>
       </div>

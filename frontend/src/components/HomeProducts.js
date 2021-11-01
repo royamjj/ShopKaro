@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Fragment } from "react";
 import "../App.css";
-
+import TopBrands from "./TopBrands";
 import Product from "./Product";
 import Loading from "./Loading";
 
@@ -44,14 +44,15 @@ export function HomeProducts() {
             </h1>
           </div>
           <div className="top-product">
-            <div className="left-symbol">&lsaquo;</div>
-            <div className="right-symbol">&rsaquo;</div>
+            <div className="left-symbol">&larr;</div>
+            <div className="right-symbol">&#8594;</div>
             <div className="top-product-img"></div>
             <div className="top-product-info">
               <p>Airpods Wireless Bluetooth Headphones</p>
               <button className="btn buy-now">Buy now &#8594;</button>
             </div>
           </div>
+          <TopBrands/>
           <div className="various-products">
             <h1>Various products . . .</h1>
             <div className="various-container">

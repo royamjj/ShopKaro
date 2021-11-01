@@ -1,0 +1,27 @@
+.top-brand-heading {
+    margin: 50px auto 50px;
+  color: white;
+  font-weight: 900;
+  text-shadow: 2px 3px 3px rgba(204, 0, 119, 0.466);
+}
+.top-brands-container{
+    border-radius: 10px;
+    display: grid;
+    background-color: rgba(255, 255, 255, 0.815);
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem;
+}
+.top-brands-container > img{
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 15rem;
+  height: 12rem;
+  border-radius: 10px;
+  margin: 1rem 1rem 1rem 1rem;
+}
+@media all and (max-width: 600px){
+  .top-brands-container{
+    grid-template-columns: 1fr;
+  }
+}
