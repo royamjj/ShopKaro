@@ -1,0 +1,41 @@
+.login-form-container{
+    width: 500px;
+    margin: 100px auto;
+    background: linear-gradient(to right top, rgba(0, 0, 0, 0.815), rgba(59, 59, 59, 0.747));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px 0px;
+    border: 2px solid black;
+    color: white;
+}
+.login-heading{
+    font-weight: 400;
+    background-image: linear-gradient( to right, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+    padding: 10px;
+}
+#login{
+    font-size: 2rem;
+}
+.login-username, .login-password{
+    margin: 20px;
+}
+.login-input:focus{
+    outline: none;
+}
+.login-input{
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 2px;
+}
+.login-credentails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}

@@ -10,7 +10,7 @@ function Product({ product }) {
         <div className="various-info">{product.name}</div>
         <div>
           <h3>
-            <b>Rs. {product.price}</b>
+            <b id="various-price">Rs. {product.price}</b>
           </h3>
         </div>
       </Link>
@@ -23,7 +23,7 @@ function Product({ product }) {
         }}
       >
         <StarComponent props={{size: 20, rating:product.rating, isEditable:false}}/>
-        <span style={{paddingTop:"5px",}}>{product.numReviews} reviews</span>
+        <span style={{paddingTop:"5px",fontSize:"0.8rem"}}>{product.numReviews} reviews</span>
         
       </div>
     </Fragment>
